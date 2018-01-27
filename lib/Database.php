@@ -22,13 +22,14 @@ class Database{
 	private $password = null;
 
 	function __construct(){
-		$config = parse_ini_file("database.ini", true);
+		$config = parse_ini_file("config/database.ini", true);
+
 		$this->host = $config['host'];
 		$this->dbname = $config['dbname'];
 		$this->user = $config['user'];
 		$this->password = $config['password'];
 	}
 	function connect(){
-		return new PDO("mysql:host=".$this->host.";port=5432;dbname=".$this->dbname.";user=".$this->user.";password=".$this->password);
+		return new PDO("mysql:host=".$this->host.";dbname=".$this->dbname, $this->user,$this->password);
 	}
 }

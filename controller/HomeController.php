@@ -14,7 +14,10 @@ class HomeController extends Controller{
     }
 
     public function index(){
-        echo $this->view->rend('home/index.php');
+        $dbLista = new ListaModel();
+        $lista = $dbLista->getLista();
+
+        echo $this->view->rend('home/index.php', array('arrLista' => $lista));
     }
 
     public function error(){
