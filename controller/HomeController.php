@@ -8,8 +8,11 @@
 
 class HomeController extends Controller{
 
-    function __construct()
+    private $params = null;
+
+    function __construct($arrParms = null)
     {
+        $this->params = $arrParms;
         parent::__construct();
     }
 

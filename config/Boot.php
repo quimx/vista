@@ -41,7 +41,7 @@ class Boot{
         }
 
         if(class_exists($controller)){
-            $ct = new $controller();
+            $ct = new $controller($arrParms);
             $ct->$action();
         }else{
             $ct = new HomeController();
