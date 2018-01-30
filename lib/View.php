@@ -10,9 +10,8 @@ class View{
 
     function rend($file, $arrVar = array()){
         extract($arrVar);
-
         ob_start();
         include "view/$file";
-        return ob_get_clean();
+        echo ob_get_clean();
     }
 }

@@ -10,6 +10,18 @@ function __autoload($class){
     }
 }
 
+function pre($content){
+    echo "<pre>";
+    var_dump($content);
+    echo "</pre>";
+}
+
+function pred($content){
+    echo "<pre>";
+    var_dump($content);
+    exit;
+}
+
 require_once "config/Boot.php";
 
 $boot = new Boot();

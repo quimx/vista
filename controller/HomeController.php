@@ -20,7 +20,7 @@ class HomeController extends Controller{
         $dbLista = new ListaModel();
         $lista = $dbLista->getLista();
 
-        echo $this->view->rend('home/index.php', array('arrLista' => $lista));
+        $this->view->rend('home/index.php', array('arrLista' => $lista));
     }
 
     public function error(){
