@@ -59,4 +59,11 @@ class ListaController extends Controller{
 
         $this->view->rend('lista/editar.php', array('arrDadosItem' => $arrDadosItem[0]));
     }
+
+    public function finalizado(){
+        $dbLista = new ListaModel();
+        $arrFinalizado = $dbLista->getListaFinalizado();
+
+        $this->view->rend('lista/finalizado.php', array('arrFinalizado' => $arrFinalizado));
+    }
 }

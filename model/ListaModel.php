@@ -27,6 +27,19 @@ class ListaModel extends Model{
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getListaFinalizado(){
+        $sql = "select * 
+                from {$this->table}
+                where lis_status = 1 
+                and lis_finalizado_em is not null";
+
+        $con = $this->getCon();
+        $sth = $con->prepare($sql);
+        $sth->execute();
+
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function removeItem($id){
         $sql = "update {$this->table} 
                 set lis_status = 0

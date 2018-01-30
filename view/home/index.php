@@ -2,9 +2,16 @@
 <title>Home</title>
 <h3>Listagem de tarefas</h3>
 <br />
-<a id="incluir" href="/lista/cadastrar">+ Incluir Tarefa</a>
+<a class="btn btn-primary btn-sm" href="/lista/cadastrar">+ Incluir Tarefa</a>
+<a class="btn btn-primary btn-sm" href="/lista/finalizado">Tarefas Finalizadas</a>
 <hr>
+<?php if(!empty($arrLista)): ?>
 <table>
+    <tr style="color: lightgray; font-size: 12px">
+        <th>Ações</th>
+        <th style="padding-left: 10px">Data Limite</th>
+        <th style="padding-left: 10px">Descrição</th>
+    </tr>
 <?php foreach ($arrLista as $lista): ?>
     <tr>
         <td>
@@ -23,4 +30,5 @@
     </tr>
 <?php endforeach?>
 </table>
+<?php endif;?>
 <?php include('view/footer.php'); ?>
